@@ -79,8 +79,8 @@ import ReportsTableHeaderCell from '../../ReportsTableHeaderCell.vue';
 
 withDefaults(
   defineProps<{
-    toggleSort: Function;
-    getSortClass: Function;
+    toggleSort: (key: string) => void;
+    getSortClass: (key: string) => string;
     hasEmployeesColumn?: boolean;
   }>(),
   { hasEmployeesColumn: true },

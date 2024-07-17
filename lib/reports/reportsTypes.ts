@@ -21,8 +21,8 @@ export type ReportsCommonResponseFieldsType = {
 // first column data fields for reports pages
 export type ReportsRecord =
   ReportsCommonResponseFieldsType & {
-    date?: Date | null;
-    name?: string | null; // employee full name
+    date?: Date;
+    name?: string; // employee full name
   };
 
 export const ReportsDatePickerDialogTabsEnum = {
@@ -35,7 +35,7 @@ export type ReportsDatePickerDialogTabsType =
   typeof ReportsDatePickerDialogTabsEnum[keyof typeof ReportsDatePickerDialogTabsEnum];
 
 export type ReportsDatePickerItemType = {
-  id?: string; // safe way to indentify an active item
+  id?: string; // safe way to identify an active item
   tab: ReportsDatePickerDialogTabsType;
   label: string; // represents date range shortly with just words
   dateLabel: string;
