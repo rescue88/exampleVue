@@ -185,7 +185,7 @@ import { Entity } from '@/lib/store/realtimeEntities';
 import store from '@/store';
 import { viewport } from '@/util/windowFunctions';
 import { computed, reactive, ref, watch } from 'vue';
-import { Employee, EmployeeStatusEnum } from '../../../../../api/v1';
+import { Employee, EmployeeStatusEnum } from '@/api/v1';
 
 const props = defineProps<{
   parentFilters: ReportsFiltersType;

@@ -230,10 +230,10 @@ onBeforeUnmount(() => {
       tbody {
         td {
           &:first-child {
-            color: #303030;
+            color: $gray-800;
           }
           &:not(:first-child) {
-            color: #676767;
+            color: $gray-600;
           }
         }
       }

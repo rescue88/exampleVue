@@ -108,8 +108,8 @@ const changeFilters = (newFilters: ReportsFiltersType) => {
   Object.assign(filters, newFilters);
 };
 
-const fetchDailyTotals = withLoading(loading, async () => {
-  await reportsApi
+const fetchDailyTotals = withLoading(loading, () =>
+  reportsApi
     .listReportsByDay({
       ...parseReportsFilters(filters),
       startsAt: dateItem.value.startDate,
@@ -130,8 +130,8 @@ const fetchDailyTotals = withLoading(loading, async () => {
           date,
         };
       }) as ReportsRecord[];
-    });
-});
+    }),
+);
 const fetchDailyTotalsDebounced = debounce(fetchDailyTotals, 500) as Function;
 
 watch([filters, dateItem], () => {

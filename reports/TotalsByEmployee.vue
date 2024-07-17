@@ -96,15 +96,15 @@ const changeFilters = (newFilters: ReportsFiltersType) => {
   Object.assign(filters, newFilters);
 };
 
-const fetchTotalsByEmployee = withLoading(loading, async () => {
-  await fetchAll(reportsApi.listReportsByEmployee.bind(reportsApi), {
+const fetchTotalsByEmployee = withLoading(loading, () =>
+  fetchAll(reportsApi.listReportsByEmployee.bind(reportsApi), {
     ...parseReportsFilters(filters),
     startsAt: dateItem.value.startDate,
     endsAt: dateItem.value.endDate,
   }).then((response) => {
     totalsByEmployeeTable.data = response.data;
-  });
-});
+  }),
+);
 const fetchTotalsByEmployeeDebounced = debounce(
   fetchTotalsByEmployee,
   500,
